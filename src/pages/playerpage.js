@@ -5,6 +5,7 @@ import { CardContainer } from "../containers/album-card"
 export default function PlayerPage() {
     return (
         <>
+            <HeaderContainer />
         </>
     )
 }

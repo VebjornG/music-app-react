@@ -8,7 +8,7 @@ export function HeaderContainer({ children }) {
                 <Header.Image/>
             </Header.Button>
 
-            <Header.Text value={message}>{message.toUpperCase()}</Header.Text>
+            <Header.Text message="">The Works: Rachmaninoff</Header.Text>
 
             <Header.Button>
                 <Header.Image/>
