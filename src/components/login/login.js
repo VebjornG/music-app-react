@@ -9,7 +9,7 @@ export default function Login() {
             <Container>
                 <Image src={"/images/spotify-white.jpg"}/>
                 <Button onClick={() => window.open(`${loginURL}`)}>LOGIN TO SPOTIFY</Button>
-            </Container>
+            </Container >
         </>
     )
 }
