@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, Router } from 'react-router-dom'
-import { loginURL } from "./spotify"
+import { loginURL } from "../spotify"
 import { Container, Button, Image } from "./styles/login-styles"
 
 export default function Login() {
