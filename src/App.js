@@ -29,7 +29,7 @@ function App() {
         
         dispatch({                         // The dispatch function sends data to the StateProvider (in order to update the state). 
           type: 'SET_USER',                // Sends 'SET_USER' to the reducer which handles that action. After sending
-          user: user                       // it to the layer we pull back the update version by writing 'user: user' in the case of getting the user.
+          user: user                       // it to the layer we pull back the updated version by writing 'user: user' in the case of getting the user.
         })                                 // The same method is used to update and pull out songs and playlists etc.
       })
     }
