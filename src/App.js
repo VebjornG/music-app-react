@@ -1,27 +1,33 @@
-import React from "react"
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
-import { Route } from "react-router-dom"
-import { PlayerPage } from "./pages"
+import React, { useState, useEffect } from "react"
+import Login from "./components/login"
+import { getTokenFromResponse} from "./components/spotify"
+import SpotifyWebApi from "spotify-web-api-js"
+
+const spotifyAPI = new SpotifyWebApi()     // Used to communicate with the Spotify Web API
 
 function App() {
+  const [token, setToken] = useState('')
+
+  useEffect(() => {
+    const hash = getTokenFromResponse()
+    window.location.hash = ''              // Strips URL of the access token
+    const _token = hash.access_token       // _token to avoid name issues with state
+
+    _token ? 
+      setToken(_token)
+      && spotifyAPI.setAccessToken(_token) // Handing the token to the spotify service
+      && spotifyAPI.getMe().then(user => {
+        console.log(user)
+      })
+      : setToken(null)
+
+  }, [])
+
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/signin">
-          <p>I will be the sign in page</p>
-        </Route>
-        <Route path="/signup">
-          <p>I will be the sign up page</p>
-        </Route>
-        <Route path="/playerpage">
-          <PlayerPage />
-        </Route>
-        <Route path="/">
-          <p>I will be the home page</p>
-        </Route>
-      </Switch>
-    </Router>
-    
+    <>
+      {token ? <h1>This is where the player will be</h1> : <Login />}
+    </>
   );
 }
 
