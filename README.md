@@ -1,5 +1,5 @@
 # Music App Rebuild of Spotify
-A music player rebuild of Spotify which is under development.
+A rebuild of Spotify which is under development.
 
 # Getting Started with Create React App
 
