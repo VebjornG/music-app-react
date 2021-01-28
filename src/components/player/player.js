@@ -2,15 +2,15 @@ import React from "react"
 import Body from "./body"
 import Sidebar from "./sidebar"
 import Footer from "./footer"
-import "./player.css"
+import { Container } from "./styles/player-styles"
 
 export default function Player({ spotifyAPI }) {
     return (
         <>
-            <div className="body">
+            <Container>
                 <Sidebar />
                 <Body />
-            </div>
+            </Container>
             <Footer />
         </>
     )

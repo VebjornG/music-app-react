@@ -1,6 +1,11 @@
 import styled from "styled-components"
 
 export const Container = styled.div `
-    border: 2px solid red;
-    flex: 0.8;
+    flex: 0.875;
+    overflow-y: overlay;
+    color: #fff;
+    height: 100vh;
+    padding: 30px;
+    background: linear-gradient(rgb(91, 87, 115), rgba(0,0,0,1));
+    background-color: #121212
 `;
