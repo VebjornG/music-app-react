@@ -1,4 +1,4 @@
-# Music App Rebuild of Spotify
+# Rebuild of Spotify
 A rebuild of Spotify which is under development.
 
 # Getting Started with Create React App
