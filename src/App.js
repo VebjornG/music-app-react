@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import Login from "./components/login/login"
-import Player from "./components/player/player"
-import { getTokenFromResponse} from "./components/spotify"
+import Login from "./pages/login/login"
+import Player from "./pages/player/player"
+import { getTokenFromResponse} from "./authentication/spotify"
 import SpotifyWebApi from "spotify-web-api-js"
 import { useStateProviderValue } from "./context/stateprovider"
 
@@ -19,14 +19,16 @@ function App() {
     const _token = hash.access_token       // _token to avoid name issues with state
 
     if(_token) {
+
       dispatch({
         type: 'SET_TOKEN',
         token: _token
       })
+
       spotifyAPI.setAccessToken(_token)    // Handing the token to the spotify service
       spotifyAPI.getMe().then(user => {    // Gets user by the getMe() method
         
-        
+         
         dispatch({                         // The dispatch function sends data to the StateProvider (in order to update the state). 
           type: 'SET_USER',                // Sends 'SET_USER' to the reducer which handles that action. After sending
           user: user                       // it to the layer we pull back the updated version by writing 'user: user' in the case of getting the user.

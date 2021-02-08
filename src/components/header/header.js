@@ -1,5 +1,5 @@
 import React from "react"
-import { Container } from "./styles/header-styles"
+import { Container } from "./header-styles"
 
 export default function Header() {
     return (

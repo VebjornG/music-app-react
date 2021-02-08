@@ -1,8 +1,8 @@
 import React from "react"
-import Body from "./body"
-import Sidebar from "./sidebar"
-import Footer from "./footer"
-import { Container } from "./styles/player-styles"
+import Body from "../../components/body/body"
+import Sidebar from "../../components/sidebar/sidebar/sidebar"
+import Footer from "../../components/footer/footer"
+import { Container } from "./player-styles"
 
 export default function Player({ spotifyAPI }) {
     return (

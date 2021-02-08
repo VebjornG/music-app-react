@@ -1,6 +1,6 @@
 import React from "react"
-import { Container } from "./styles/body-styles"
-import Header from "./header"
+import { Container } from "./body-styles"
+import Header from "../header/header"
 
 export default function Body() {
     return (

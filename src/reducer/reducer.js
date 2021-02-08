@@ -14,13 +14,18 @@ const reducer = (state, action) => {    // Function that take the previous state
         case 'SET_USER':
             return {
                 ...state,                // Keep everything in the previous state but the user value (...state) 
-                user: action.user        // The new state now contains { user: action.user, .. }
+                user: action.user        // The new state now contains { user: action.user, *rest of previous keys* }
             }
         case 'SET_TOKEN':
             return {
                 ...state,
                 token: action.token
             }
+        /*case 'SET_PLAYLIST': 
+            return {
+                ...state,
+                playlist: action.playlist
+            }*/
         default: 
             return state
     }

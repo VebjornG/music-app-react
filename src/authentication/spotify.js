@@ -1,5 +1,3 @@
-
-
 // https://developer.spotify.com/documentation/web-playback-sdk/quick-start/#
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
@@ -13,7 +11,7 @@ const scopes = [
         "user-top-read",
         "user-modify-playback-state",
     ]
-
+     
 export const getTokenFromResponse = () => {
     return window.location.hash     // targets the hash in the localhost browser url, i.e. #access_token...
             .substring(1)           // targets everything from the second character
