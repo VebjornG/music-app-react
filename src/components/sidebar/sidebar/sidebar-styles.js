@@ -38,3 +38,18 @@ export const Ul = styled.ul ``;
 export const List = styled.li `
     color: #fff;
 `;
+
+export const Strong = styled.strong `
+    color: #adadad;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-left: 16px;
+`;
+
+export const Hr = styled.hr `
+    border: 1px solid #282828;
+    height: 0px;
+    width: 90%;
+    margin: 10px auto;
+`;

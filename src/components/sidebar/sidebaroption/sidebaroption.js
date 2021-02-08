@@ -9,7 +9,7 @@ export default function SidebarOption({ title, Icon }) {
                     {/*Icon && <></>*/}
                 {<IconStyle>{Icon && <Icon/>}</IconStyle>}
                     {/*<TextH4>{Icon && title}</TextH4>*/}
-                {Icon ? <Text>{title}</Text> : <Text><Icon/>{title}</Text>}
+                {Icon ? <TextH4>{title}</TextH4> : <Text> {title}</Text>}
             </Container>
         </>
     ) 

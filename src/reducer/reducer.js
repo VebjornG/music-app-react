@@ -2,9 +2,9 @@ export const initialState = {   // Initial state of parameters
     user: null,
     playlists: [],
     playing: false,
-    item: null,
+    item: null
     // REMOVE TOKEN AFTER FINISHED DEBUGGING AND CREATING THE PLAYER PAGE
-    token: 'BQCi-hEbHQ43Qw8Gk8VgUBhCi99PCUqip8vihjO61duwdAQpCivrfcpJMb-qC0iPD742hei1nvxAUH-EJtKF8teyuNswPrYAjbF7puVXI2dRGBshlbjQF8061Uwk8_1qvEi2aphFiPsg19VQ_IRlgBYYT38'
+    //token: 'BQCi-hEbHQ43Qw8Gk8VgUBhCi99PCUqip8vihjO61duwdAQpCivrfcpJMb-qC0iPD742hei1nvxAUH-EJtKF8teyuNswPrYAjbF7puVXI2dRGBshlbjQF8061Uwk8_1qvEi2aphFiPsg19VQ_IRlgBYYT38'
 }
 
 const reducer = (state, action) => {    // Function that take the previous state and an action to return the next state.
@@ -21,11 +21,11 @@ const reducer = (state, action) => {    // Function that take the previous state
                 ...state,
                 token: action.token
             }
-        /*case 'SET_PLAYLIST': 
+        case 'SET_PLAYLIST': 
             return {
                 ...state,
-                playlist: action.playlist
-            }*/
+                playlists: action.playlists
+            }
         default: 
             return state
     }

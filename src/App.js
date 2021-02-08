@@ -34,6 +34,15 @@ function App() {
           user: user                       // it to the layer we pull back the updated version by writing 'user: user' in the case of getting the user.
         })                                 // The same method is used to update and pull out songs and playlists etc.
       })
+
+      spotifyAPI.getUserPlaylists()
+        .then(playlists => {
+          dispatch({
+            type: 'SET_PLAYLIST',
+            playlists: playlists
+          })
+        })
+
     }
 
   }, [])
