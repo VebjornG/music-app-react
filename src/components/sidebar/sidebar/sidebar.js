@@ -5,9 +5,11 @@ import HomeIcon from "@material-ui/icons/Home"
 import SearchIcon from "@material-ui/icons/Search"
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic"
 import { useStateProviderValue } from "../../../context/stateprovider"
+import { getTokenFromResponse } from "../../../authentication/spotify"
 
 export default function Sidebar() {
     const [{ playlists }, dispatch] = useStateProviderValue()
+    console.log(playlists)
 
     return (
         <>
@@ -22,7 +24,7 @@ export default function Sidebar() {
                 <Hr/>
 
                 {playlists?.items?.map(playlist => {
-                    <SidebarOption title={playlist.id} />
+                    <SidebarOption title={playlist.name} />
                 })}
             </Container>
         </>

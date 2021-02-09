@@ -9,10 +9,10 @@ const spotifyAPI = new SpotifyWebApi()     // Used to communicate with the Spoti
 
 function App() {
   //const [token, setToken] = useState('')
-  const [{ user, token }, dispatch] = useStateProviderValue()   // dispatch is a function used to update the state from 
-                                                                // the provider by sending actions to the reducer which 
-                                                                // listens for said actions. We can grab e.g. user from 
-                                                                // the StateProvider by writing { user }. 
+  const [{ user, token, playlists }, dispatch] = useStateProviderValue()   // dispatch is a function used to update the state from 
+                                                                           // the provider by sending actions to the reducer which 
+                                                                           // listens for said actions. We can grab e.g. user from 
+                                                                           // the StateProvider by writing { user }. 
   useEffect(() => {
     const hash = getTokenFromResponse()
     window.location.hash = ''              // Strips URL of the access token
@@ -35,20 +35,20 @@ function App() {
         })                                 // The same method is used to update and pull out songs and playlists etc.
       })
 
-      spotifyAPI.getUserPlaylists()
-        .then(playlists => {
+      spotifyAPI.getUserPlaylists().then(playlists => {
           dispatch({
-            type: 'SET_PLAYLIST',
+            type: 'SET_PLAYLISTS',
             playlists: playlists
           })
         })
 
     }
 
-  }, [])
+  }, [token, dispatch])
 
   console.log(user)
   console.log(token)
+  console.log(playlists)
 
   return (
     <>
