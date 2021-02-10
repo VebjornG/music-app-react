@@ -36,11 +36,23 @@ function App() {
       })
 
       spotifyAPI.getUserPlaylists().then(playlists => {
-          dispatch({
-            type: 'SET_PLAYLISTS',
-            playlists: playlists
-          })
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists: playlists
         })
+      })
+
+      spotifyAPI.getMyTopArtists().then(response => {
+        dispatch({
+          type: 'SET_TOP_ARTISTS',
+          top_artists: response
+        })
+      })
+
+      dispatch({
+        type: 'SET_SPOTIFY',
+        spotify: spotifyAPI
+      })
 
     }
 

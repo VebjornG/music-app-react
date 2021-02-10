@@ -3,6 +3,9 @@ export const initialState = {   // Initial state of parameters
     playlists: [],
     playing: false,
     item: null,
+    spotify: null,
+    top_artists: null,
+    item: null,
     // REMOVE TOKEN AFTER FINISHED DEBUGGING AND CREATING THE PLAYER PAGE
     token: 'BQCi-hEbHQ43Qw8Gk8VgUBhCi99PCUqip8vihjO61duwdAQpCivrfcpJMb-qC0iPD742hei1nvxAUH-EJtKF8teyuNswPrYAjbF7puVXI2dRGBshlbjQF8061Uwk8_1qvEi2aphFiPsg19VQ_IRlgBYYT38'
 }
@@ -25,6 +28,26 @@ const reducer = (state, action) => {    // Function that take the previous state
             return {
                 ...state,
                 playlists: action.playlists
+            }
+        case 'SET_PLAYING':
+            return {
+                ...state,
+                playing: action.playing
+            }
+        case 'SET_SPOTIFY':
+            return {
+                ...state,
+                spotify: action.spotify
+            }
+        case 'SET_TOP_ARTISTS':
+            return {
+                ...state,
+                top_artists: action.top_artists
+            }
+        case 'SET_ITEM':
+            return {
+                ...state,
+                item: action.item
             }
         default: 
             return state

@@ -5,7 +5,7 @@ export const Container = styled.div `
     overflow-y: overlay;
     color: #fff;
     height: 100vh;
-    padding: 30px;
+    padding: 20px;
     background: linear-gradient(rgb(91, 87, 115), rgba(0,0,0,1));
     background-color: #121212
 `;
