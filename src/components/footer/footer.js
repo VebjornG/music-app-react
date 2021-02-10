@@ -16,13 +16,15 @@ import { Container,
          StyledVolumeDownIcon,
          StyledPlaylistPlayIcon,
          StyledDevicesIcon,
-         StyledFavoriteBorderIcon } from "./footer-styles"
+         StyledFavoriteBorderIcon,
+         StyledPauseCircleFilledIcon,
+         StyledFavoriteIcon } from "./footer-styles"
 
 import { useStateProviderValue } from "../../context/stateprovider"
 import SpotifyWebApi from "spotify-web-api-js"
 
 
-import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+/*import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import ShuffleIcon from "@material-ui/icons/Shuffle";
@@ -32,7 +34,8 @@ import PauseCircleFilledIcon from "@material-ui/icons/PauseCircleFilled";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import DevicesIcon from '@material-ui/icons/Devices';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from '@material-ui/icons/Favorite';*/
+
 import { Slider, Grid } from "@material-ui/core";
 
 
@@ -95,7 +98,7 @@ export default function Footer() {
                 type: "SET_ITEM",
                 item: res.item,
             });
-            
+
             dispatch({
                 type: "SET_PLAYING",
                 playing: true,
@@ -108,19 +111,38 @@ export default function Footer() {
         <>
             <Container>
                 <Footer_Left>
-                    <Image src="https://img.discogs.com/ArEnMxv1tcJBwA-UFKb9FiYe-tg=/fit-in/600x591/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3807111-1345187966-4845.jpeg.jpg"/>
-                    <Div numberOfLines={1}>
-                        <H4>Piano Concerto No. 2</H4>
-                        <Text>Rachmaninoff</Text>
-                    </Div>
+                    <Image src={item?.album.images[0].url}
+                           alt={item?.name}/>
+                    {item ? (
+                        <Div numberOfLines={1}>
+                            <H4>Piano Concerto No. 2</H4>
+                            <Text>Rachmaninoff</Text>
+                        </Div>
+                    ):(
+                        <Div numberOfLines={1}>
+                        <H4></H4>
+                        <Text></Text>
+                        </Div>
+                    )}
                     <StyledFavoriteBorderIcon />
                 </Footer_Left>
 
                 <Footer_Center>
                     <StyledShuffleIcon />
-                    <StyledSkipPreviousIcon />
-                    <StyledPlayCircleFilledIcon fontSize="large"/>
-                    <StyledSkipNextIcon />
+                    <StyledSkipPreviousIcon onClick={skipNext}/>
+
+                    {playing ? (
+                        <StyledPauseCircleFilledIcon 
+                            onClick={handlePlayPause}
+                            fontSize="large"
+                        />
+                    ):(
+                        <StyledPlayCircleFilledIcon 
+                            onClick={handlePlayPause}
+                            fontSize="large"
+                        />
+                    )}
+                    <StyledSkipNextIcon onClick={skipPrevious}/>
                     <StyledRepeatIcon />
                 </Footer_Center>
 

@@ -40,6 +40,14 @@ export const StyledPlayCircleFilledIcon = styled(PlayCircleFilledIcon) `
     }
 `;
 
+export const StyledPauseCircleFilledIcon = styled(PauseCircleFilledIcon) `
+    &:hover {
+        transition: transform 0.2s ease-in-out;
+        transform: scale(1.1) !important;
+        color: #1ed15e;
+    }
+`;
+
 export const StyledSkipPreviousIcon = styled(SkipPreviousIcon) `
     &:hover {
         transition: transform 0.2s ease-in-out;
@@ -97,6 +105,14 @@ export const StyledDevicesIcon = styled(DevicesIcon) `
 `;
 
 export const StyledFavoriteBorderIcon = styled(FavoriteBorderIcon) `
+    &:hover {
+        transition: transform 0.2s ease-in-out;
+        transform: scale(1.1) !important;
+        color: #1ed15e;
+    }
+`;
+
+export const StyledFavoriteIcon = styled(FavoriteIcon) `
     &:hover {
         transition: transform 0.2s ease-in-out;
         transform: scale(1.1) !important;

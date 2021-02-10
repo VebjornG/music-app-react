@@ -4,6 +4,7 @@ export const initialState = {   // Initial state of parameters
     playing: false,
     item: null,
     spotify: null,
+    discover_weekly: null,
     top_artists: null,
     item: null,
     // REMOVE TOKEN AFTER FINISHED DEBUGGING AND CREATING THE PLAYER PAGE
@@ -24,6 +25,11 @@ const reducer = (state, action) => {    // Function that take the previous state
                 ...state,
                 token: action.token
             }
+        case 'SET_DISCOVER_WEEKLY':
+            return {
+                ...state,
+                discover_weekly: action.discover_weekly
+            };
         case 'SET_PLAYLISTS': 
             return {
                 ...state,
