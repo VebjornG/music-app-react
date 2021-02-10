@@ -8,7 +8,9 @@ import { Container,
          BodyIcons,
          StyledFavoriteIcon,
          StyledPlayCircleFilledIcon,
-         StyledMoreHorizIcon } from "./body-styles"
+         StyledMoreHorizIcon,
+         H2,
+         Text } from "./body-styles"
 
 import SongRow from "../songrow/songrow"
 import { useStateProviderValue } from "../../context/stateprovider"
@@ -63,8 +65,8 @@ export default function Body({ spotifyAPI }) {
                     <Image />
                     <BodyInfoText>
                         <strong>PLAYLIST</strong>
-                        <h2>Discover Weekly</h2>
-                        <p>{discover_weekly?.description}</p>
+                        <H2>Discover Weekly</H2>
+                        <Text>{discover_weekly?.description}</Text>
                     </BodyInfoText>
                 </BodyInfo>
 

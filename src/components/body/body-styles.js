@@ -5,7 +5,17 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 
-export const StyledPlayCircleFilledIcon = styled(PlayCircleFilledIcon) ``;
+export const StyledPlayCircleFilledIcon = styled(PlayCircleFilledIcon) `
+  font-size: 80px !important;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  &:hover {
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+  }
+`;
 
 export const StyledFavoriteIcon = styled(FavoriteIcon) ``;
 
@@ -16,17 +26,48 @@ export const Container = styled.div `
     overflow-y: overlay;
     color: #fff;
     height: 100vh;
-    padding: 20px;
+    width: 100%;
+    padding: 30px;
     background: linear-gradient(rgb(91, 87, 115), rgba(0,0,0,1));
     background-color: #121212
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
 `;
 
-export const BodyInfo = styled.div ``;
+export const H2 = styled.h2 `
+    font-size: 48px;
+    margin-bottom: 10px;
+`;
 
-export const Image = styled.img ``;
+export const Text = styled.p `
+    font-size: 14px;
+`;
 
-export const BodyInfoText = styled.div ``;
+export const BodyInfo = styled.div `
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+`;
 
-export const BodySongs = styled.div ``;
+export const Image = styled.img `
+    height: 20vw;
+    margin: 0 20px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+`;
 
-export const BodyIcons = styled.div ``;
+export const BodyInfoText = styled.div `
+    flex: 1;
+`;
+
+export const BodySongs = styled.div `
+    z-index: 1;
+    margin: 20px -30px;
+`;
+
+export const BodyIcons = styled.div `
+  display: flex;
+  align-items: center;
+`;
