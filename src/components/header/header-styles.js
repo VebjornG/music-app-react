@@ -12,16 +12,21 @@ export const Container = styled.div `
 export const HeaderLeft = styled.div `
     flex: 0.5;
     display: flex;
+    align-items: center;
     background-color: white;
-    padding: 10px;
+    min-width: 80px;
+    max-width: 300px;
+    padding: 0 10px;
     border-radius: 30px;
     color: gray;
-    align-items: center;
 `;
 
 export const Input = styled.input `
     border: none;
+    outline: none;
     width: 100%;
+
+
 `;
 
 export const HeaderRight = styled.div `

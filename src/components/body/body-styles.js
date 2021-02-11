@@ -6,10 +6,11 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 
 export const StyledPlayCircleFilledIcon = styled(PlayCircleFilledIcon) `
-  font-size: 80px !important;
+  font-size: 65px !important;
   margin-left: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: #1ed15e;
   
   &:hover {
     transition: 100ms transform ease-in;
@@ -17,9 +18,21 @@ export const StyledPlayCircleFilledIcon = styled(PlayCircleFilledIcon) `
   }
 `;
 
-export const StyledFavoriteIcon = styled(FavoriteIcon) ``;
+export const StyledFavoriteIcon = styled(FavoriteIcon) `
+    color: #1ed15e;
 
-export const StyledMoreHorizIcon = styled(MoreHorizIcon) ``;
+    &:hover {
+        transition: 100ms transform ease-in;
+        transform: scale(1.08);
+      }
+`;
+
+export const StyledMoreHorizIcon = styled(MoreHorizIcon) `
+    &:hover {
+        transition: 100ms transform ease-in;
+        transform: scale(1.08);
+    }
+`;
 
 export const Container = styled.div `
     flex: 0.875;
@@ -40,6 +53,7 @@ export const Container = styled.div `
 export const H2 = styled.h2 `
     font-size: 48px;
     margin-bottom: 10px;
+    font-weight: bold;
 `;
 
 export const Text = styled.p `
@@ -70,4 +84,8 @@ export const BodySongs = styled.div `
 export const BodyIcons = styled.div `
   display: flex;
   align-items: center;
+
+  & .MuiSvgIcon-root {
+        margin-right: 30px;
+    }
 `;

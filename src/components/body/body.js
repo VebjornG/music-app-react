@@ -22,7 +22,7 @@ export default function Body({ spotifyAPI }) {
     const playPlaylist = (id) => {
         spotifyAPI
             .play({
-                context_uri: `spotify:playlist:37i9dQZEVXcJZyENOWUFo7`,
+                context_uri: `spotifyAPI:playlist:4ZuqBHB6zFSIATTh0JfSBn`, 
             })
             .then(res => {
                 spotifyAPI.getMyCurrentPlayingTrack().then(response => {
@@ -43,11 +43,11 @@ export default function Body({ spotifyAPI }) {
             .play({
                 uris: [`spotify:track:${id}`],
             })
-            .then((res) => {
-                spotifyAPI.getMyCurrentPlayingTrack().then((r) => {
+            .then(res => {
+                spotifyAPI.getMyCurrentPlayingTrack().then(response => {
                     dispatch({
                         type: "SET_ITEM",
-                        item: r.item,
+                        item: response.item,
                     });
                     dispatch({
                         type: "SET_PLAYING",
@@ -56,13 +56,14 @@ export default function Body({ spotifyAPI }) {
                 });
             });
     };
+
     return (
         <>
             <Container>
-                <Header />
+                <Header spotifyAPI={spotifyAPI}/>
 
                 <BodyInfo>
-                    <Image />
+                    <Image src={discover_weekly?.images[0].url} alt=""/>
                     <BodyInfoText>
                         <strong>PLAYLIST</strong>
                         <H2>Discover Weekly</H2>

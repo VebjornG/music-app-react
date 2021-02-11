@@ -42,6 +42,14 @@ function App() {
         })
       })
 
+      spotifyAPI.getPlaylist('37i9dQZEVXcXbJjvlEoiYz')
+        .then(response => {
+          dispatch({
+            type: 'SET_DISCOVER_WEEKLY',
+            discover_weekly: response
+          })
+        })
+
       spotifyAPI.getMyTopArtists().then(response => {
         dispatch({
           type: 'SET_TOP_ARTISTS',

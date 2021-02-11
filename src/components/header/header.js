@@ -23,7 +23,7 @@ export default function Header({ spotifyAPI }) {
                 </HeaderLeft>
 
                 <HeaderRight>
-                    <StyledAvatar alt={user?.display_name} src={user?.images[0].url}/>
+                    <StyledAvatar alt={user?.display_name} src={user?.images[0]?.url}/>
                     <H4>{user?.display_name}</H4>
                 </HeaderRight>
             </Container>

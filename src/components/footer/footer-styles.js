@@ -158,12 +158,32 @@ export const Footer_Left = styled.div `
 
 export const Footer_Center = styled.div `
     flex: 0.4;
-    padding: 0 100px;
+    padding: 0 450px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 250px;
+
+    @media (max-width: 1000px) {
+        padding: 0 100px;
+    }
+
+    @media (max-width: 1100px) and (min-width: 1000px) {
+        padding: 0 150px;
+    }
+
+    @media (max-width: 1200px) and (min-width: 1100px) {
+        padding: 0 200px;
+    }
+
+    @media (max-width: 1300px) and (min-width: 1200px) {
+        padding: 0 250px;
+    }
+
+    @media (max-width: 1400px) and (min-width: 1300px) {
+        padding: 0 300px;
+    }
 `;
 
 export const Footer_Right = styled.div `
@@ -172,6 +192,10 @@ export const Footer_Right = styled.div `
     align-items: center;
     justify-content: space-between;
     color: white;
+
+    & .MuiSlider-root {
+        color: green;
+    }
 `;
 
 export const Text = styled.p `

@@ -9,9 +9,9 @@ export default function Player({ spotifyAPI }) {
         <>
             <Container>
                 <Sidebar />
-                <Body />
+                <Body spotifyAPI={spotifyAPI}/>
             </Container>
-            <Footer />
+            <Footer spotifyAPI={spotifyAPI}/>
         </>
     )
 }

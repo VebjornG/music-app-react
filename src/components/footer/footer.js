@@ -158,7 +158,7 @@ export default function Footer() {
                             <StyledVolumeDownIcon />
                         </Grid>
                         <Grid item xs>
-                            <Slider style={{maxWidth: "80px", position: "relative"}}/>
+                            <Slider aria-labelledby="continuous-slider"/>
                         </Grid>
                     </Grid>
                 </Footer_Right>
